@@ -102,53 +102,6 @@
     });
   }
 
-  /* ---------- Contact form (Web3Forms, AJAX submit) ---------- */
-  const contactForm = document.getElementById("contactForm");
-  const formStatus = document.getElementById("formStatus");
-  if (contactForm && formStatus) {
-    contactForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const submitBtn = contactForm.querySelector(".form-submit");
-      const data = new FormData(contactForm);
-
-      // Block submit until access key has been set
-      const key = data.get("access_key");
-      if (!key || key === "YOUR_WEB3FORMS_ACCESS_KEY_HERE") {
-        formStatus.textContent = "Form is not configured yet. Please email me directly.";
-        formStatus.className = "form-status error";
-        return;
-      }
-
-      submitBtn.classList.add("loading");
-      submitBtn.disabled = true;
-      formStatus.textContent = "Sending...";
-      formStatus.className = "form-status";
-
-      try {
-        const res = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          body: data,
-          headers: { Accept: "application/json" },
-        });
-        const json = await res.json();
-        if (json.success) {
-          formStatus.textContent = "Message sent. I'll get back to you soon.";
-          formStatus.className = "form-status success";
-          contactForm.reset();
-        } else {
-          formStatus.textContent = json.message || "Something went wrong. Please try again or email me directly.";
-          formStatus.className = "form-status error";
-        }
-      } catch (err) {
-        formStatus.textContent = "Network error. Please try again or email me directly.";
-        formStatus.className = "form-status error";
-      } finally {
-        submitBtn.classList.remove("loading");
-        submitBtn.disabled = false;
-      }
-    });
-  }
-
   /* ---------- Hide media fallback if image actually loads ---------- */
   document.querySelectorAll(".project-media").forEach((el) => {
     const style = el.getAttribute("style") || "";

@@ -438,52 +438,24 @@
   <!-- ===================== CONTACT ===================== -->
   <section id="contact" class="section section-alt">
     <div class="container">
-      <div class="section-head reveal contact-head">
-        <span class="section-tag">Contact</span>
-        <h2>Open to Arabic localization projects.</h2>
-        <p class="section-sub">
-          Working on a game that needs Arabic localization, QA, or linguistic review?
-          Send me a message — I'll get back to you soon.
-        </p>
-      </div>
-
-      <div class="contact-grid">
-
-        <!-- Contact form (Web3Forms) -->
-        <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
-          <input type="hidden" name="access_key" value="3fa06cf5-1330-440b-bb81-7b78951ebe51" />
-          <input type="hidden" name="subject" value="New message from your portfolio site" />
-          <input type="hidden" name="from_name" value="Azaam Portfolio" />
-          <!-- Honeypot field to catch bots; humans never see/fill it -->
-          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" />
-
-          <div class="form-row">
-            <label for="cf-name">Name <span>*</span></label>
-            <input type="text" id="cf-name" name="name" required placeholder="Your name" autocomplete="name" />
+      <div class="contact-card reveal">
+        <div class="contact-left">
+          <span class="section-tag">Contact</span>
+          <h2>Open to Arabic localization projects.</h2>
+          <p>
+            Working on a game that needs Arabic localization, QA, or linguistic review?
+            Reach out — I'm happy to discuss scope, timeline, and rates.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:contact@azaamworks.com">Email Me</a>
+            <!--
+              Place a PDF version of your portfolio at the project root as: portfolio.pdf
+              The button stays usable even before the PDF is added.
+            -->
+            <a class="btn btn-ghost" href="portfolio.pdf" download>Download Portfolio (PDF)</a>
           </div>
-          <div class="form-row">
-            <label for="cf-email">Email <span>*</span></label>
-            <input type="email" id="cf-email" name="email" required placeholder="you@studio.com" autocomplete="email" />
-          </div>
-          <div class="form-row">
-            <label for="cf-subject">Subject</label>
-            <input type="text" id="cf-subject" name="user_subject" placeholder="Localization inquiry, collaboration, etc." />
-          </div>
-          <div class="form-row">
-            <label for="cf-msg">Message <span>*</span></label>
-            <textarea id="cf-msg" name="message" rows="6" required placeholder="Tell me about your project — game, scope, timeline."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary form-submit">
-            <span class="btn-label">Send Message</span>
-          </button>
-
-          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-        </form>
-
-        <!-- Sidebar -->
-        <aside class="contact-side reveal">
-          <h3>Other ways to reach me</h3>
+        </div>
+        <div class="contact-right">
           <ul class="contact-list">
             <li>
               <span class="contact-label">Email</span>
@@ -493,18 +465,8 @@
               <span class="contact-label">GitHub</span>
               <a href="https://github.com/AzaamAlghamdi" target="_blank" rel="noopener">github.com/AzaamAlghamdi</a>
             </li>
-            <li>
-              <span class="contact-label">Steam</span>
-              <a href="https://steamcommunity.com/profiles/76561199531310302/" target="_blank" rel="noopener">Steam Profile</a>
-            </li>
           </ul>
-          <!--
-            Place a PDF version of your portfolio at the project root as: portfolio.pdf
-            The button stays usable even before the PDF is added.
-          -->
-          <a class="btn btn-ghost btn-full" href="portfolio.pdf" download>Download Portfolio (PDF)</a>
-        </aside>
-
+        </div>
       </div>
     </div>
   </section>
