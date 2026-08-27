@@ -12,15 +12,17 @@ function ProjectMeta({ project }) {
 
 export function ProjectChapter({ project, position, assetUrl }) {
   const reduceMotion = useReducedMotion();
+  const primaryHref = project.detailHref ?? project.href;
+  const isInternalLink = Boolean(project.detailHref);
 
   return (
     <Reveal className={`project-chapter ${position % 2 ? "project-chapter--reverse" : ""}`}>
       <motion.a
         className="chapter-media"
-        href={project.href}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={`${project.linkLabel}: ${project.title}`}
+        href={primaryHref}
+        target={isInternalLink ? undefined : "_blank"}
+        rel={isInternalLink ? undefined : "noreferrer"}
+        aria-label={`${project.detailLabel ?? project.linkLabel}: ${project.title}`}
         whileHover={reduceMotion ? undefined : { y: -4 }}
         transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       >
@@ -46,8 +48,13 @@ export function ProjectChapter({ project, position, assetUrl }) {
         </ul>
         <div className="chapter-footer">
           <p>{project.tags.join(" · ")}</p>
-          <a className="text-link text-link--chapter" href={project.href} target="_blank" rel="noreferrer">
-            {project.linkLabel} <span aria-hidden="true">↗</span>
+          <a
+            className="text-link text-link--chapter"
+            href={primaryHref}
+            target={isInternalLink ? undefined : "_blank"}
+            rel={isInternalLink ? undefined : "noreferrer"}
+          >
+            {project.detailLabel ?? project.linkLabel} <span aria-hidden="true">{isInternalLink ? "→" : "↗"}</span>
           </a>
         </div>
       </div>

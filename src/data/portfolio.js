@@ -24,6 +24,8 @@ export const projects = [
       "In-game testing and revision"
     ],
     tags: ["Translation", "Terminology", "In-game review"],
+    detailHref: "/dst/",
+    detailLabel: "Explore the DST translation",
     href: "https://steamcommunity.com/sharedfiles/filedetails/?id=3641916210",
     linkLabel: "View on Steam Workshop"
   },

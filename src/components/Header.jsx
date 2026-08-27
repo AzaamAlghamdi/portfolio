@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 const navItems = [
   { label: "Proof", href: "#translation-proof" },
   { label: "Work", href: "#work" },
+  { label: "MS II / WIP", href: "/mortal-shell-2/" },
   { label: "Method", href: "#method" }
 ];
 
